@@ -1,0 +1,27 @@
+{
+  "name": "Shopping-List-App",
+  "version": "1.0.0",
+  "description": "Gal Shopping List App",
+  "main": "index.js",
+  "dependencies": {
+    "http": "0.0.1-security",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrMoshkovitz/Shopping-List-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrMoshkovitz/Shopping-List-App/issues"
+  },
+  "homepage": "https://github.com/MrMoshkovitz/Shopping-List-App#readme"
+}
