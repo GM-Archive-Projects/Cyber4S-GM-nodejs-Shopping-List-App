@@ -1,6 +1,7 @@
 # Shopping List App
  Gal Shopping List App
 
+
 # Task:
 * Create new private repository
 * Create new brunch called "backend"
