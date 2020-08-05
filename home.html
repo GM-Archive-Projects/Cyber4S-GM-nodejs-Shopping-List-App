@@ -15,14 +15,15 @@
         </header>
 
         <div id = "controlPanel">
-          <!--The Control Panel is where the user adds his Pokemons To The Deck-->
-            <input id ="search" value="Pokemon ID / Name" /> <button id ="searchButton" class="btn"> Search </button>
-            <input type="button" value='All Pokemons List' class="btn">
-            <button id="sortButton" onclick="sortArray()" type="button" class="btn">Sort</button> <!--Clicking this element will rearrange the Pokemons List by their Price (DESC) -->
+          <!--The Control Panel is where the user Control The Pokemons-->
+          <input id ="search" value="Pokemon Identifier" />
+            <button id ="searchButton" class="btn"> Search </button>
+            <input type="button" value='Pokemons List' class="btn">
+            <button id="sortButton" onclick="sortArray()" type="button" class="btn">Sort Deck</button> <!--Clicking this element will rearrange the Pokemons List by their Price (DESC) -->
             <button id="addButton" class="btn">Add To Deck </button>
         </div>
 
-        <div id="results"></div>
+        <div id="searchResults"></div>
         <div id="pokemonsDeck">
             <ul id = "pokemonsList">
 
@@ -31,7 +32,7 @@
 
 
     </div>
-    <script type ="text/javascript" src="index.js"></script>
+    <script type ="text/javascript" src="app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+body {
+    background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/0f/c2/96/d2/pokemon-souvenirs-paradise.jpg");
+}
+#shoppingApp {
+    text-align: center;
+    margin: 0 450px;
+    background: antiquewhite;
+    border-radius: 30px;
+    border: 1px solid grey;
+}
