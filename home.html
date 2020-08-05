@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping List</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemons Shopping</title>
 </head>
 <body>
-    <h1>Shopping List App</h1>
-    <input type=button onClick="location.href='products'" value='ProductsList'>
+    <!-- This is The Main App Div which includes all of the App HTML-->
+    <div id="shoppingApp">
+        <header>
+            <h1 id= "mainHeader">Pokemon Shopping List App</h1>
+        </header>
 
-    <div id="products">
-        <h2 id="productsHeading"></h2>
-        <ul id="productsList">
-        </ul>
+        <div id = "controlPanel">
+          <!--The Control Panel is where the user adds his Pokemons To The Deck-->
+            <input id ="search" value="Pokemon ID / Name" /> <button id ="searchButton" class="btn"> Search </button>
+            <input type="button" value='All Pokemons List' class="btn">
+            <button id="sortButton" onclick="sortArray()" type="button" class="btn">Sort</button> <!--Clicking this element will rearrange the Pokemons List by their Price (DESC) -->
+            <button id="addButton" class="btn">Add To Deck </button>
+        </div>
+
+        <div id="results"></div>
+        <div id="pokemonsDeck">
+            <ul id = "pokemonsList">
+
+            </ul>
+        </div>
+
+
     </div>
-    <!-- <button onclick="location.href='http://www.example.com'">Products List</button> -->
-    
     <script type ="text/javascript" src="index.js"></script>
 </body>
 
