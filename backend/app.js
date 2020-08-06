@@ -96,3 +96,18 @@ app.put('/product/:id', (req, res) =>{
         }
     });
 });
+
+  // - a DELETE request to /products/{id} delete a product from the static array
+  app.delete('/products/:id', (req, res) =>{
+    console.log("\n\nDelete Request Entered\n")
+    products.forEach((product, index) =>{
+        if(product.id === req.body.id){
+            deletedProduct = products.splice(index, 1);
+            console.log(`\nDeleted Product:\n ${JSON.stringify(deletedProduct)}`)
+            console.log(`\n\nNew Products After Deletion: \n${JSON.stringify(products)}`)
+            res.send(JSON.stringify(req.body) + ' deleted');
+        }
+    });
+});
+
+app.listen(port);
