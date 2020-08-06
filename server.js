@@ -3,7 +3,7 @@ const port = 3000;
 const express = require("express");
 const app = express()
 
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));
 app.use(express.static('src/'))
 const { readFileSync } = require('fs');
 const server = http.createServer(app);

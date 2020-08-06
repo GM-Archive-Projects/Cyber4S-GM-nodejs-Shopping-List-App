@@ -20,7 +20,6 @@ axios.defaults.validateStatus = (status) => status >= 200 && status < 300;
 
 function getPokemon(pokeminIdentifier) {
     console.log("GetPokemon Func");
-    let tempError = axios.get
     return axios
       .get(`/${pokemonId}`)
       .then(response => response)
