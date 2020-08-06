@@ -82,3 +82,17 @@ app.post("/products/", (req, res) => {
     res.send(`New Product Added \n ${JSON.stringify(req.body)}`);
   }
 });
+
+app.put('/product/:id', (req, res) =>{
+    console.log("\n\n\nPUT Request Entered\n\n")
+    products.forEach((product, index) =>{
+        if(product.id === req.body.id){
+            console.log(`Product ID (${req.body.id}) Exist: ${JSON.stringify(products[index])}\n`)
+            console.log(`OLD Product:       ${JSON.stringify(products[index])}`);
+            products[index] = req.body;
+            console.log(`New Product:      ${JSON.stringify(products[index])}\n`)
+            console.log(`\nNew Products After Put\n ${JSON.stringify(products)}\n`);
+            res.send(req.body);
+        }
+    });
+});
