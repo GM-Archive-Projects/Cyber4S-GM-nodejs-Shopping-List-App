@@ -44,3 +44,21 @@ app.use(express.json());
 app.get("/products", (req, res) => {
   res.json(products);
 });
+
+
+
+app.get("/products/:productId", (req, res) => {
+    for (let product of products) {
+      console.log(
+        product.id,
+        typeof product.id,
+        req.params.productId,
+        typeof req.params.productId
+      );
+      var productID = product.id.toString();
+      console.log(product.id.toString === req.params.productId);
+      if (productID === req.params.productId) {
+        res.send(product);
+      }
+    }
+  });
