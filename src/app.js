@@ -12,11 +12,34 @@ const pokemonsDeck = document.getElementById("pokemonsDeck");
 const pokemonsList = document.getElementById("pokemonsList");
 
 
-const axios = require('axios');
+import axios from 'axios';
 
 // defaults
 axios.defaults.baseURL = "http://pokeapi.co/api/v2/pokemon";
 axios.defaults.validateStatus = (status) => status >= 200 && status < 300;
+
+function getPokemon(pokeminIdentifier) {
+    console.log("GetPokemon Func");
+    let tempError = axios.get
+    return axios
+      .get(`/${pokemonId}`)
+      .then(response => response)
+      .catch(function (error) {
+        console.log("===Error===");
+        console.log(
+          error.response.config.method,
+          error.response.request.responseURL,
+          error.response.data,
+          error.response.status
+        );
+        // displayError(errorString)
+        throw error.response;
+      });
+  }
+
+function displayError(error) {
+
+}
 
 
 
