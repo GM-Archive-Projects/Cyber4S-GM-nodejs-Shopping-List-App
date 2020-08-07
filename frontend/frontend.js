@@ -8,13 +8,13 @@ const itemMaker = (product) =>{
     const deleteButton = document.createElement("button");
     editButton.innerHTML = "Edit";
     deleteButton.innerHTML = "Delete";
-    
+    return li;
 }
 
 const listMaker = async() =>{
     const  {data}  = await axios.get(`http://localhost:3000/products`);
     data.forEach(product => {
-        const li = listMaker(product);
+        const li = itemMaker(product);
         productsList.appendChild(li);
     });
 }
@@ -24,10 +24,25 @@ const editing = async(product) => {
     listMaker();
 }
 
-const adding = async(product) => {
-    const response = await axios.post(`http://localhost:3000/products/`, product);
-    const li =itemMaker(response);
-    productsList.appendChild(li);
+const adding = async() => {
+    const inputId = document.querySelector("#inputId");
+    const inputName = document.querySelector("#inputName");
+    const inputPrice = document.querySelector("#inputPrice");
+    const inputStock = document.querySelector("#inputStock");
+    const product = {
+        id: inputId.value,
+        name: inputName.value,
+        price: inputPrice.value,
+        ammout: inputStock.value,
+    }
+    if(!product.id || !product.name || !product.price || !product.ammout){
+        alert("please enter all of the parameters")
+    }
+    else{
+        await axios.post(`http://localhost:3000/products/`, product);
+        const li =itemMaker(product);
+        productsList.appendChild(li);
+    }
 }
 
 const deleating = async(product) => {

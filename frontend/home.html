@@ -7,11 +7,12 @@
 </head>
 <body>
     <h1>Shopping List App</h1>
-    <div id="adding-window">
-        <label for="inputId"><input class="productInput" id="inputId"></label>
-        <label for="inputName"><input class="productInput" id="inputName"></label>
-        <label for="inputPrice"><input class="productInput" id="inputPrice"></label>
-        <label for="inputStock"><input class="productInput" id="inputStock"></label>
+    <div id="adding-window" style="display: flex; flex-direction: column;">
+        <label for="inputId">ID:<input class="productInput" id="inputId"></label>
+        <label for="inputName">Product Name:<input class="productInput" id="inputName"></label>
+        <label for="inputPrice">Price:<input class="productInput" id="inputPrice"></label>
+        <label for="inputStock">Stock<input class="productInput" id="inputStock"></label>
+        <button onclick="adding()" style="width: 50px;">Add</button>
     </div>
     <div id="products">
         <ul id="productsList"></ul>
