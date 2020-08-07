@@ -74,7 +74,7 @@ app.post("/products/", (req, res) => {
   }
 });
 
-app.put('/product/:id', (req, res) =>{
+app.put('/products/:id', (req, res) =>{
     console.log("\n\n\nPUT Request Entered\n\n")
     products.forEach((product, index) =>{
         if(product.id === req.body.id){
@@ -92,11 +92,11 @@ app.put('/product/:id', (req, res) =>{
   app.delete('/products/:id', (req, res) =>{
     console.log("\n\nDelete Request Entered\n")
     products.forEach((product, index) =>{
-        if(product.id === req.body.id){
+        if(product.id == req.params.id){
             deletedProduct = products.splice(index, 1);
             console.log(`\nDeleted Product:\n ${JSON.stringify(deletedProduct)}`)
             console.log(`\n\nNew Products After Deletion: \n${JSON.stringify(products)}`)
-            res.send(JSON.stringify(req.body) + ' deleted');
+            res.send(product + ' deleted');
         }
     });
 });
