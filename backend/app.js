@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+app.use(express.json());
 
 let products = [
   {
@@ -32,29 +33,19 @@ let products = [
     name: "Cigarretes",
     price: 300,
     ammout: 3,
-  },
+  }
 ];
 
-app.use(express.json());
-
-// app.get("/", (req, res) => {
-//     res.send(homeFile);
-//   });
 
 app.get("/products", (req, res) => {
   res.json(products);
 });
 
 app.get("/products/:productId", (req, res) => {
+    console.log("Get Request Enteered")
   for (let product of products) {
-    console.log(
-      product.id,
-      typeof product.id,
-      req.params.productId,
-      typeof req.params.productId
-    );
     var productID = product.id.toString();
-    console.log(product.id.toString === req.params.productId);
+    console.log(`Products Exist? ${product.id.toString === req.params.productId}`);
     if (productID === req.params.productId) {
       res.send(product);
     }
