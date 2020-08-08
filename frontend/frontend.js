@@ -12,6 +12,17 @@ const productBuilder = () =>{
     }
     return product;
 }
+const checker = (id) =>{
+    const productsArray = productsList.childNodes;
+    let bool = false;
+    for (let i = 0; i < productsArray.length; i++) {
+        if(id == productsArray[i].id){
+            bool = true
+        }
+        
+    }
+    return bool;
+}
 const itemMaker = (product) =>{
     const li = document.createElement("li");
     li.innerHTML = `${product.name}: ${product.price}`;
@@ -34,13 +45,15 @@ const listMaker = async() =>{
 
 const editing = async() => {
     const product = productBuilder();
-    debugger
+    const check = checker(product.id);
     if(!product.id || !product.name || !product.price || !product.ammout){
         alert("please enter all of the parameters")
+    }
+    else if(!check){
+        alert("no such product please try agian");
     }else{
         await axios.put(`http://localhost:3000/products/${product.id}`, product);
-        debugger
-        const oldItem = productsList.querySelector(`#${product.id}`);
+        const oldItem = document.getElementById(`${product.id}`);
         const newItem = itemMaker(product);
         productsList.replaceChild(newItem, oldItem);
     }
@@ -48,8 +61,12 @@ const editing = async() => {
 
 const adding = async() => {
     const product = productBuilder();
+    const check = checker(product.id);
     if(!product.id || !product.name || !product.price || !product.ammout){
         alert("please enter all of the parameters")
+    }
+    else if(check){
+        alert("product alredy exises under this id, try 'Edit'");
     }
     else{
         await axios.post(`http://localhost:3000/products/`, product);

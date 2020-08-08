@@ -77,7 +77,7 @@ app.post("/products/", (req, res) => {
 app.put('/products/:id', (req, res) =>{
     console.log("\n\n\nPUT Request Entered\n\n")
     products.forEach((product, index) =>{
-        if(product.id === req.body.id){
+        if(product.id == req.params.id){
             console.log(`Product ID (${req.body.id}) Exist: ${JSON.stringify(products[index])}\n`)
             console.log(`OLD Product:       ${JSON.stringify(products[index])}`);
             products[index] = req.body;
